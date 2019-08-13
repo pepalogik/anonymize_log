@@ -104,7 +104,9 @@ always use a cryptographic salt. The salt should be randomly generated,
 different for each website (if there are several on the server), and changed
 over time. You can generate a random salt with this command (in `bash`):
 
-`SALT="$(dd if=/dev/urandom bs=8 count=1 status=none | base64)"`
+```bash
+SALT="$(dd if=/dev/urandom bs=8 count=1 status=none | base64)"
+```
 
 Finally, used salts should not be stored any longer than necessary.
 
