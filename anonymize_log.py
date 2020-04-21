@@ -145,7 +145,7 @@ def anonymize_host(host):
         else:
             try:
                 ans = socket.getaddrinfo(host,None,proto=socket.IPPROTO_TCP)  # direct DNS
-            except socket.gaierror:
+            except (socket.gaierror, ValueError):
                 result = hashlib.md5((host+salt).encode()).hexdigest()+_tld(host)
                 host_map[host] = result
                 return result
