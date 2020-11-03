@@ -1364,7 +1364,7 @@ def anonymize_referrer(referrer):
     return referrer[:pq]+'?'+first_arg
 
 # log line
-reLL = r'([^ ]*) ([^ ]*) ([^ ]*) \[([^\]]*)\] "([^"]*)" ([^ ]*) ([^ ]*) "([^"]*)" "(.*)"'
+reLL = r'([^ ]*) ([^ ]*) ([^ ]*) \[([^\]]*)\] "([^"\\]*(?:\\.[^"\\]*)*)" ([^ ]*) ([^ ]*) "([^"\\]*(?:\\.[^"\\]*)*)" "(.*)"'
 creLL = re.compile(reLL)
 
 for line in sys.stdin:
